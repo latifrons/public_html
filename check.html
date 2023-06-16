@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Universal Parameter Example</title>
+</head>
+<body>
+  <!-- Input field to enter the universal parameter -->
+  <label for="parameter">Contract Address: </label>
+  <input type="text" id="parameter" size="100" />
+  <button onclick="updateIframes()">Submit</button>
+  
+
+  <div style="margin-bottom: 30px;height: 1px;"></div>
+  <!-- Iframe section -->
+  <div id="iframes">
+    <iframe id="iframe1" src="" width="30%" height="2000"></iframe>
+    <iframe id="iframe2" src="" width="30%" height="2000"></iframe>
+    <iframe id="iframe3" src="" width="30%" height="2000"></iframe>
+  </div>
+
+  <script>
+    function updateIframes() {
+      var parameter = document.getElementById("parameter").value;
+      
+      // Update the src of each iframe with the parameter appended to the URL
+      document.getElementById("iframe1").src = "https://gopluslabs.io/token-security/1/" + parameter;
+      document.getElementById("iframe2").src = "https://www.cyberscope.io/cyberscan?network=ETH&address=" + parameter;
+      document.getElementById("iframe3").src = "https://tokensniffer.com/token/eth/" + parameter;
+    }
+  </script>
+</body>
+</html>
